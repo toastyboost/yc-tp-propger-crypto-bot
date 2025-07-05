@@ -1,0 +1,31 @@
+frameworkVersion: "3"
+
+service: lambda-service
+plugins:
+  - "@yandex-cloud/serverless-plugin"
+  - serverless-dotenv-plugin
+
+useDotenv: true
+
+provider:
+  name: yandex-cloud
+  runtime: nodejs22
+  httpApi:
+    payload: "1.0"
+
+package:
+  patterns:
+    - "!**"
+    - package.json
+    - package-lock.json
+    - dist/**/*.js
+
+functions:
+  lambda:
+    environment:
+      ENV: ${env:ENV}
+    handler: dist/index.lambda
+    memorySize: 128
+    timeout: 60
+ 
+   
