@@ -1,9 +1,7 @@
 import { Telegraf, session } from "telegraf";
 import { Handler } from "@yandex-cloud/function-types";
 
-const token = process.env.CRYPTO_BOT_TOKEN || "";
-
-export const cryptoBot = new Telegraf(token);
+export const cryptoBot = new Telegraf(``);
 
 cryptoBot.use(session());
 
