@@ -3,9 +3,6 @@ frameworkVersion: "3"
 service: serverless
 plugins:
   - "@yandex-cloud/serverless-plugin"
-  - serverless-dotenv-plugin
-
-useDotenv: true
 
 provider:
   name: yandex-cloud
@@ -25,5 +22,3 @@ functions:
     handler: dist/index.cryptoBotHandler
     memorySize: 128
     timeout: 15
-    environment:
-      ENV: ${env:ENV}

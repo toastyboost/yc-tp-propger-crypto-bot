@@ -1,17 +1,15 @@
 {
-  "name": "yc-function-starter",
-  "private": true,
+  "name": "yc-tproger-crypto-bot",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "build": "tsc && vite build --ssr",
-    "deploy:prod": "npm run build && npx --no-install serverless deploy --stage prod"
+    "deploy:prod": "npm run build && npx --no-install serverless deploy"
   },
   "devDependencies": {
     "@types/node": "^24.0.10",
     "@yandex-cloud/function-types": "^2.1.2",
     "@yandex-cloud/serverless-plugin": "^1.7.25",
-    "serverless-dotenv-plugin": "^6.0.0",
     "typescript": "~5.8.3",
     "vite": "^7.0.0"
   },
