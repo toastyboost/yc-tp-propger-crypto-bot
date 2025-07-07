@@ -1,6 +1,6 @@
 frameworkVersion: "3"
 
-service: lambda-service
+service: serverless
 plugins:
   - "@yandex-cloud/serverless-plugin"
   - serverless-dotenv-plugin
@@ -21,11 +21,9 @@ package:
     - dist/**/*.js
 
 functions:
-  lambda:
+  cryptoBot:
+    handler: dist/index.cryptoBotHandler
+    memorySize: 128
+    timeout: 15
     environment:
       ENV: ${env:ENV}
-    handler: dist/index.lambda
-    memorySize: 128
-    timeout: 60
- 
-   

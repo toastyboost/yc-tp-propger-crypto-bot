@@ -4,25 +4,26 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "build": "tsc && vite build",
+    "build": "tsc && vite build --ssr",
     "deploy:prod": "npm run build && npx --no-install serverless deploy --stage prod"
   },
   "devDependencies": {
     "@types/node": "^24.0.10",
     "@yandex-cloud/function-types": "^2.1.2",
     "@yandex-cloud/serverless-plugin": "^1.7.25",
+    "serverless-dotenv-plugin": "^6.0.0",
     "typescript": "~5.8.3",
     "vite": "^7.0.0"
   },
-  "imports": {
-    "#*": "./src/*",
-    "#libs/*": "./src/libs/*.ts"
-  },
   "dependencies": {
-    "serverless-dotenv-plugin": "^6.0.0",
     "telegraf": "^4.16.3"
   },
   "engines": {
     "node": ">=22.0.0"
+  },
+  "imports": {
+    "#*": "./src/*",
+    "#libs/*": "./src/libs/*.ts",
+    "#functions/*": "./src/functions/*.ts"
   }
 }

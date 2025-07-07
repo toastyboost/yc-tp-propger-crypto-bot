@@ -1,11 +1,9 @@
 import { Telegraf, session } from "telegraf";
 import { Handler } from "@yandex-cloud/function-types";
 
-import { start } from "./commands";
-
 const token = process.env.CRYPTO_BOT_TOKEN || "";
 
-const cryptoBot = new Telegraf(token);
+export const cryptoBot = new Telegraf(token);
 
 cryptoBot.use(session());
 
@@ -25,9 +23,3 @@ export const cryptoBotHandler: Handler.Http = async function (e) {
     };
   }
 };
-
-/* default commands */
-
-cryptoBot.start(start);
-
-/* custom commands */
