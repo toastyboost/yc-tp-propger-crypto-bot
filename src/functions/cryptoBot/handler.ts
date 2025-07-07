@@ -9,11 +9,11 @@ const cryptoBot = new Telegraf(token);
 
 cryptoBot.use(session());
 
-export const botHandler: Handler.Http = async function (e) {
+export const cryptoBotHandler: Handler.Http = async function (e) {
   try {
-    const message = JSON.parse(e.body as string) || "";
+    const msg = JSON.parse(e.body as string) || "";
 
-    await cryptoBot.handleUpdate(message);
+    await cryptoBot.handleUpdate(msg);
 
     return {
       statusCode: 200,
