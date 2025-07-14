@@ -18,7 +18,7 @@ package:
     - dist/**/*.js
 
 functions:
-  cryptoBot:
+  crypto-bot:
     handler: dist/index.cryptoBotHandler
     memorySize: 128
     timeout: 15
