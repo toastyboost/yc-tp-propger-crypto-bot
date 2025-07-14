@@ -16,10 +16,16 @@ touch .env.prod
 
 ```
 npm run build
-npm run deploy:prod
+npm run deploy
 ```
+
+## Hook
+
+```
+https://api.telegram.org/bot<token>/setWebhook?url=<function_url>
 
 ## Frameworks
 
 - https://serverless.com
 - https://yandex.cloud
+```
