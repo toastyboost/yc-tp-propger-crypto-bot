@@ -1,5 +1,5 @@
 import { replySettings } from "#libs/constants";
-import { cryptoBot } from "./handler";
+import { api } from "./api";
 
 import { Ctx } from "./types";
 
@@ -11,13 +11,12 @@ export const start = (ctx: Ctx["hears"]) => {
 
 /* custom commands */
 
-export const tickers = async (ctx: Ctx["hears"]) => {};
+export const tickers = async (ctx: Ctx["hears"]) => {
+  const prices = await api.getPrices();
+  const tickers = prices.map((price) => price.symbol).slice(0, 10);
+  const reply = tickers.join("");
 
-export const price = async (ctx: Ctx["hears"]) => {};
+  ctx.reply(reply, replySettings);
+};
 
-/* init commands */
-
-cryptoBot.start(start);
-
-cryptoBot.command("/tickers", tickers);
-cryptoBot.command("/price", tickers);
+export const price = async () => {};

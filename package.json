@@ -2,6 +2,7 @@
   "name": "yc-tproger-crypto-bot",
   "version": "0.0.0",
   "type": "module",
+  "main": "index.js",
   "scripts": {
     "build": "tsc && vite build --ssr",
     "deploy": "npm run build && npx --no-install serverless deploy"
@@ -25,5 +26,6 @@
     "#*": "./src/*",
     "#libs/*": "./src/libs/*.ts",
     "#functions/*": "./src/functions/*.ts"
-  }
+  },
+  "packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610"
 }

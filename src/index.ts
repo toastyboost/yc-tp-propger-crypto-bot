@@ -1,1 +1,3 @@
-export { cryptoBotHandler } from "#functions/cryptoBot/handler";
+import { cryptoBotHandler } from "#functions/cryptoBot/handler";
+
+export const cryptoBot = cryptoBotHandler;

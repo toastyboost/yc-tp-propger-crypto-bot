@@ -7,7 +7,7 @@ const headers = {
 };
 
 export const api = {
-  getPrice: async () => {
+  getPrices: async () => {
     try {
       const data = await fetch(CRYPTO_API_URL, {
         headers,
