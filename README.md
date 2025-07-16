@@ -1,6 +1,6 @@
 # yc-function-starter
 
-## Prerequesites
+## Prerequisites
 
 ```
 npm i serverless -g
@@ -21,7 +21,7 @@ npm run deploy
 
 ## Hook
 
-Связать телеграмм-бота с облачной функцией:
+Связать телеграмм-бота и облачную функцию:
 
 ```
 https://api.telegram.org/bot<token>/setWebhook?url=<function_url>
