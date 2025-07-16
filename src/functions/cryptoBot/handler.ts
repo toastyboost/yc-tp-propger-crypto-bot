@@ -1,8 +1,9 @@
 import { Telegraf } from "telegraf";
 import { Handler } from "@yandex-cloud/function-types";
+import { price, start, tickers } from "./commands";
 
 export const cryptoBot = new Telegraf(
-  `0000000000:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`
+  `0000000000:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`,
 );
 
 export const cryptoBotHandler: Handler.Http = async function (event, ctx) {
@@ -23,7 +24,14 @@ export const cryptoBotHandler: Handler.Http = async function (event, ctx) {
   } catch (e) {
     return {
       statusCode: 500,
-      body: JSON.stringify(e),
+      body: JSON.stringify({
+        error: String(e),
+      }),
     };
   }
 };
+
+cryptoBot.command("tickers", tickers);
+cryptoBot.command("price", price);
+
+cryptoBot.start(start);
