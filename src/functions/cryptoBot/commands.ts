@@ -7,10 +7,11 @@ export const start = (ctx: Ctx["hears"]) => {
   const reply: string[] = [];
 
   reply.push(`Привет, ${ctx.from.first_name}!`);
-  reply.push(`<br />`);
+  reply.push(`\n\n`);
   reply.push(`Вам доступны команды:`);
-  reply.push(`<br />`);
+  reply.push(`\n\n`);
   reply.push(`/tickers Показать доступные токены`);
+  reply.push(`\n`);
   reply.push(`/price <ticker> Найти цену по тикеру`);
 
   const message = reply.join("");

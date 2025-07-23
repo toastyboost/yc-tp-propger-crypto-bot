@@ -33,4 +33,5 @@ export const cryptoBotHandler: Handler.Http = async function (event, ctx) {
 
 cryptoBot.command("tickers", tickers);
 cryptoBot.command("price", price);
+
 cryptoBot.start(start);
