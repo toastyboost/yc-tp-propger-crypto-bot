@@ -20,9 +20,13 @@ export const start = (ctx: Ctx["hears"]) => {
 };
 
 export const tickers = async (ctx: Ctx["hears"]) => {
+  const arg = ctx.message.text.split(" ").slice(1)[0];
+
   const prices = await api.getPrices();
 
-  const tickers = prices.map((price) => price.symbol).slice(0, 10);
+  const tickers = prices
+    .map((price) => price.symbol)
+    .slice(0, Number(arg) || 10);
 
   const rows: string[] = [];
 

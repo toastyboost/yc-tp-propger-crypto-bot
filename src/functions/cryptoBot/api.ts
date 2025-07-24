@@ -1,10 +1,8 @@
+import { headers } from "#libs/constants";
+
 import { Price } from "./types";
 
 const CRYPTO_API_URL = "https://api.binance.com/api/v3/ticker/price";
-
-const headers = {
-  "content-type": "application/json",
-};
 
 export const api = {
   getPrices: async () => {
